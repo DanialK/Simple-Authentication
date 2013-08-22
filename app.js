@@ -111,7 +111,7 @@ app.get("/signup", function (req, res) {
 });
 
 app.post("/signup", userExist, function (req, res) {
-    var user = new User();
+
     hash(req.body.password, function (err, salt, hash) {
         if (err) throw err;
         var user = new User({
